@@ -20,8 +20,8 @@ class Nilaicalonasistencontroller extends CI_Controller {
     }
 
     public function index() {
-        //$data['nilai_calon_siswa'] = $this->nilaicalonasisten->ambilCalonSiswaDanNilai();
-        $this->load->view('tampilan' );
+        $data['nilai_calon_asisten'] = $this->nilaicalonasisten->ambilNilaiCalasSemua();
+        $this->load->view('tabelnilaicalasview',$data );
     }
 
     public function tambahNilaiCalonAsisten() {
@@ -35,10 +35,22 @@ class Nilaicalonasistencontroller extends CI_Controller {
         $c6 = $this->input->post('c6');
 
         if ($c6=="LOKAL"){
-
               $c6=20;
-              $c6a=   20;
+              $c6a= 20.0;
+        }
+        else if($c6=="NASIONAL"){
+              $c6=60;
+              $c6a= 60.0;
 
+        }
+        else if($c6=="INTERNASIONAL"){
+              $c6=100;
+              $c6a= 100.0;
+
+        }
+        else if($c6=="NONE"){
+              $c6=0;
+              $c6a= 0;
         }
 
         foreach ($this->Himpunan->ambilHimpunan() as $h) {
@@ -79,7 +91,7 @@ class Nilaicalonasistencontroller extends CI_Controller {
         //
         // }
 
-
+        //print ($c6a);
 
 
         $val = array(
@@ -89,7 +101,7 @@ class Nilaicalonasistencontroller extends CI_Controller {
             'nilai_asli_c3' => $this->input->post('c3'),
             'nilai_asli_c4' => $this->input->post('c4'),
             'nilai_asli_c5' => $this->input->post('c5'),
-            'nilai_asli_c6' => intval($c6a),
+            'nilai_asli_c6' =>  $c6a,
             'c1' => $c1,
             'c2' => $c2,
             'c3' => $c3,
@@ -106,7 +118,7 @@ class Nilaicalonasistencontroller extends CI_Controller {
         $this->calonsiswa->ubahCalonSiswa($valCalonSiswa, $nim);
 
         //redirect('Nilaicalonasistencontroller');
-        echo "oke";
+         ;
     }
 
 }

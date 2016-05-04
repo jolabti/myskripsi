@@ -52,7 +52,7 @@
           <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>TABEL NILAI CALAS</a>
         </li>
         <li>
-          <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL NORMALISASI</a>
+          <a href="<?php echo base_url();?>index.php/nilaicalonasistencontroller/"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL NORMALISASI</a>
         </li>
         <li>
           <a href="<?php echo base_url();?>index.php/HimpunanController"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>TABEL HIMPUNAN</a>
@@ -77,85 +77,117 @@
       <div class="container-fluid ">
 
         <div class="row">
-          <div class="col-xl-12">
+          <div class="col-sm-8">
             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th>ID HIMPUNAN</th>
-                  <th>BATAS BAWAH</th>
-                  <th>BATAS ATAS</th>
-                  <th>BOBOT</th>
+
+                  <th>C1</th>
+                  <th>C2</th>
+                  <th>C3</th>
+                  <th>C4</th>
+                  <th>C5</th>
+                  <th>C6</th>
+                  <th>nilai_asli_c1</th>
+                  <th>nilai_asli_c2</th>
+                  <th>nilai_asli_c3</th>
+                  <th>nilai_asli_c4</th>
+                  <th>nilai_asli_c5</th>
+                  <th>nilai_asli_c6</th>
+                  <th>N.P.M</th>
                   <!-- <th>Start date</th>
                   <th>Salary</th> -->
                 </tr>
               </thead>
               <tfoot>
                 <tr>
-                  <th>ID HIMPUNAN</th>
-                  <th>BATAS BAWAH</th>
-                  <th>BATAS ATAS</th>
-                  <th>BOBOT</th>
+
+                  <th>C1</th>
+                  <th>C2</th>
+                  <th>C3</th>
+                  <th>C4</th>
+                  <th>C5</th>
+                  <th>C6</th>
+                  <th>nilai_asli_c1</th>
+                  <th>nilai_asli_c2</th>
+                  <th>nilai_asli_c3</th>
+                  <th>nilai_asli_c4</th>
+                  <th>nilai_asli_c5</th>
+                  <th>nilai_asli_c6</th>
+                  <th>N.P.M</th>
                 </tr>
               </tfoot>
               <tbody>
 
-
+              <?php
+                  foreach ($nilai_calon_asisten as $nilaiasist ) {
+                    # code...
+              ?>
 
                   <tr>
+
                     <td>
-                    aaaa
+                     <?php echo $nilaiasist->c1;?>
                     </td>
                     <td>
-                     aa
+                     <?php echo $nilaiasist->c2;?>
                     </td>
                     <td>
-                     aaaa
+                     <?php echo $nilaiasist->c3;?>
                     </td>
                     <td>
-                     aaaa
+                     <?php echo $nilaiasist->c4;?>
                     </td>
+
+                    <td>
+                     <?php echo $nilaiasist->c5;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->c6;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->nilai_asli_c1;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->nilai_asli_c2;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->nilai_asli_c3;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->nilai_asli_c4;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->nilai_asli_c5;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->nilai_asli_c6;?>
+                    </td>
+
+                    <td>
+                     <?php echo $nilaiasist->npm;?>
+                    </td>
+
+
 
                   </tr>
 
               </tbody>
+
+              <?php } ?>
             </table>
 
           </div>
         </div>
 
-        <!-- <div class="row">
-          <div class="col-xl-12">
-            <table class="table table-hover">
-              <thead class="danger">
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div> -->
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

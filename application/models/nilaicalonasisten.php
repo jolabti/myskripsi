@@ -10,6 +10,10 @@ class Nilaicalonasisten extends CI_Model{
          return $this->db->get('tb_calon_siswa_nilai')->result_array();
      }
 
+     public function ambilNilaiCalasSemua(){
+       return $this->db->get('tb_nilai_calon_asisten')->result();
+     }
+
      public function tambahNilaiCalonAsisten($nilaiCalonSiswa) {
          $this->db->insert('tb_nilai_calon_asisten', $nilaiCalonSiswa);
      }
