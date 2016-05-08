@@ -15,12 +15,12 @@ class Calonsiswacontroller extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('calonsiswa');
-        $this->load->model('NilaiCalonSiswa');
+        $this->load->model('nilaicalonasisten');
     }
 
     public function index() {
-        $data['calon_siswa'] = $this->calonsiswa->ambilCalonAsisten();
-        $this->load->view('admin/tbcalonsiswaview', $data);
+        $data['calon_asis'] = $this->calonsiswa->ambilCalonAsisten();
+        $this->load->view('tbcalonsiswaview', $data);
     }
 
     public function tambahCalonSiswa() {

@@ -84,15 +84,15 @@
 
                 <tr>
 
-                  <th>C1</th>
-                  <th>C2</th>
-                  <th>C3</th>
-                  <th>C4</th>
-                  <th>C5</th>
-                  <th>C6</th>
-
                   <th>N.P.M</th>
-                  <!-- <th>Start date</th>
+                  <th>Nama Calas</th>
+                  <th> Kelas</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Alamat</th>
+
+
+                   <!-- <th>Start date</th>
                   <th>Salary</th> -->
                 </tr>
               </thead>
@@ -100,33 +100,46 @@
 
                 <tr>
 
-                  <th>C1</th>
-                  <th>C2</th>
-                  <th>C3</th>
-                  <th>C4</th>
-                  <th>C5</th>
-                  <th>C6</th>
-
                   <th>N.P.M</th>
+                  <th>Nama Calas</th>
+                  <th> Kelas</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Alamat</th>
+
                 </tr>
               </tfoot>
               <tbody>
 
 
-                <?php foreach ( $calon_mhs as $camaha) {
+                <?php foreach ( $calon_asis as $calasis) {
 
                  ?>
                   <tr>
                     <td>
 
-                    </td>
-
-                    <td>
+                      <?php echo $calasis->npm ;?>
 
                     </td>
 
                     <td>
+                      <?php echo $calasis->nama ;?>
+                    </td>
 
+                    <td>
+                      <?php echo $calasis->kelas ;?>
+                    </td>
+
+                    <td>
+                      <?php echo $calasis->jenis_kelamin ;?>
+                    </td>
+
+                    <td>
+                      <?php echo $calasis->tanggal_lahir ;?>
+                    </td>
+
+                    <td>
+                      <?php echo $calasis->alamat ;?>
                     </td>
 
 
