@@ -16,7 +16,7 @@ class Calonsiswa extends CI_Model {
         $this->db->insert('tb_calon_siswa', $calonSiswa);
     }
 
-    public function ambilCalonSiswa() {
+    public function ambilCalonAsisten() {
         return $this->db->get('tb_calon_asisten')->result();
     }
 

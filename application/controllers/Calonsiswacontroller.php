@@ -10,17 +10,17 @@
  * Package Expression package is undefined on line 14, column 14 in Templates/Scripting/PHPClass.php.
  *
  */
-class CalonSiswaController extends CI_Controller {
+class Calonsiswacontroller extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('CalonSiswa');
+        $this->load->model('calonsiswa');
         $this->load->model('NilaiCalonSiswa');
     }
 
     public function index() {
-        $data['calon_siswa'] = $this->CalonSiswa->ambilCalonSiswa();
-        $this->load->view('admin/CalonSiswaView', $data);
+        $data['calon_siswa'] = $this->calonsiswa->ambilCalonAsisten();
+        $this->load->view('admin/tbcalonsiswaview', $data);
     }
 
     public function tambahCalonSiswa() {
