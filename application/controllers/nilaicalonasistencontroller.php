@@ -21,6 +21,7 @@ class Nilaicalonasistencontroller extends CI_Controller {
 
     public function index() {
         $data['nilai_calon_asisten'] = $this->nilaicalonasisten->ambilNilaiCalasSemua();
+        $data['titleBrow'] = "NILAI CALAS-SPKTI";
         $this->load->view('tabelnilaicalasview',$data );
     }
 

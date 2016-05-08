@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SISTEM PENUNJANG KEPUTUSAN - METODE WP</title>
+  <title><?php echo $titleBrow;?> - METODE WP</title>
   <link href="<?php echo base_url();?>css/bootstrap.css" rel="stylesheet">
   <link href="<?php echo base_url();?>css/simple-sidebar.css" rel="stylesheet">
   <!-- <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 
         <li>
-          <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>DATA CALAS</a>
+          <a href="<?php echo base_url();?>index.php/Calonsiswacontroller"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>DATA CALAS</a>
         </li>
         <li>
           <a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>KRITERIA</a>

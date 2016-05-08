@@ -7,6 +7,7 @@ class HimpunanController extends CI_Controller{
 
   public function index(){
       $this->load->model('Himpunan');
+      $data['titleBrow'] = "TABEL HIMPUNAN-SPKTI";
       $data['himpunan']= $this->Himpunan->ambilHimpunan();
 
       $this->load->view('tampilan', $data);

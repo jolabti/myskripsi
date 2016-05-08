@@ -10,13 +10,13 @@
  * Package Expression package is undefined on line 14, column 14 in Templates/Scripting/PHPClass.php.
  *
  */
-class NormalisasiController extends CI_Controller {
+class Normalisasicontroller extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Normalisasi');
-        $this->load->model('NilaiCalonSiswa');
-        $this->load->model('Kriteria');
+        $this->load->model('normalisasi');
+        $this->load->model('nilaicalonasisten');
+        $this->load->model('kriteria');
     }
 
     public function index() {
@@ -30,9 +30,9 @@ class NormalisasiController extends CI_Controller {
         $jumlahCalonSiswaDenganNilai = $this->NilaiCalonSiswa->ambilJumlahNilaiCalonSiswa();
 
         //data kriteria
-        $kriteria = $this->Kriteria->ambilKriteria();
+        $kriteria = $this->kriteria->ambilKriteria();
 
-        $nilaiCalonSiswa = $this->NilaiCalonSiswa->ambilNilaiCalonSiswaArray();
+        $nilaiCalonSiswa = $this->nilaicalonasisten->ambilNilaiCalonSiswaArray();
 
         $jumlahTotalBobotSeluruhKriteria = 0;
 
@@ -58,18 +58,20 @@ class NormalisasiController extends CI_Controller {
             //mencari nilai normalisasi karena faktor kriteria benefit berdasarkan nilai maksimal
             foreach ($nilaiCalonSiswa as $n) {
                 array_push($hasilSementaraVektor, array(
-                    'nim' => $n['nim'],
+                    'npm' => $n['npm'],
                     'c1' => (pow($n['c1'], $kriteriaSementara[0]['bobot'])),
                     'c2' => (pow($n['c2'], $kriteriaSementara[1]['bobot'])),
                     'c3' => (pow($n['c3'], $kriteriaSementara[2]['bobot'])),
                     'c4' => (pow($n['c4'], $kriteriaSementara[3]['bobot'])),
                     'c5' => (pow($n['c5'], $kriteriaSementara[4]['bobot'])),
+                    'c6' => (pow($n['c6'], $kriteriaSementara[5]['bobot'])),
                     'hasil' =>
                     (pow($n['c1'], $kriteriaSementara[0]['bobot'])) *
                     (pow($n['c2'], $kriteriaSementara[1]['bobot'])) *
                     (pow($n['c3'], $kriteriaSementara[2]['bobot'])) *
                     (pow($n['c4'], $kriteriaSementara[3]['bobot'])) *
-                    (pow($n['c5'], $kriteriaSementara[4]['bobot']))
+                    (pow($n['c5'], $kriteriaSementara[4]['bobot'])) *
+                    (pow($n['c6'], $kriteriaSementara[5]['bobot']))
                 ));
 
             }
@@ -82,10 +84,10 @@ class NormalisasiController extends CI_Controller {
             //nilai akhir
             foreach ($hasilSementaraVektor as $v) {
 
-                if ($this->Normalisasi->ambilNormalisasiBerdasakanNim($v['nim'])== 0) {
+                if ($this->normalisasi->ambilNormalisasiBerdasakanNim($v['nim'])== 0) {
 
                 $val = array(
-                    'id_normalisasi' => $this->uuid->v4(),
+                    'id_normalisasi' => rand(),
                     'total_nilai' => $v['hasil'] / $jumlahHasilSeluruhVektor,
                     'nim' => $v['nim'],
                     'nilai_c1'=>$v['c1'],
@@ -95,7 +97,7 @@ class NormalisasiController extends CI_Controller {
                     'nilai_c5'=>$v['c5']
                 );
 
-                $this->Normalisasi->tambahNormalisasi($val);
+                $this->normalisasi->tambahNormalisasi($val);
             }
             }
         }

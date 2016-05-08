@@ -19,7 +19,9 @@ class Calonsiswacontroller extends CI_Controller {
     }
 
     public function index() {
+
         $data['calon_asis'] = $this->calonsiswa->ambilCalonAsisten();
+        $data['titleBrow'] = "DATA CALAS-SPKTI";
         $this->load->view('tbcalonsiswaview', $data);
     }
 

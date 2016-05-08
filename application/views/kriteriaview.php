@@ -84,12 +84,11 @@
 
                 <tr>
 
-                  <th>N.P.M</th>
-                  <th>Nama Calas</th>
-                  <th> Kelas</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Alamat</th>
+                  <th>ID KRITERIA</th>
+                  <th>NAMA KRITERIA</th>
+                  <th>BOBOT</th>
+                  <th>Action</th>
+
 
 
                    <!-- <th>Start date</th>
@@ -100,55 +99,41 @@
 
                 <tr>
 
-                  <th>N.P.M</th>
-                  <th>Nama Calas</th>
-                  <th> Kelas</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Alamat</th>
+                  <th>ID KRITERIA</th>
+                  <th>KRITERIA</th>
+                  <th>BOBOT</th>
+                  <th>Action</th>
+
 
                 </tr>
               </tfoot>
               <tbody>
 
+                  <?php foreach ($kriteria as $krit ) {
 
-                <?php foreach ( $calon_asis as $calasis) {
+                    ?>
 
-                 ?>
                   <tr>
-                    <td>
 
-                      <?php echo $calasis->npm ;?>
+                       <td>
+                         <?php echo $krit->id_kriteria; ?>
+                       </td>
 
-                    </td>
+                       <td>
+                         <?php echo strtoupper($krit->kriteria); ?>
+                       </td>
 
-                    <td>
-                      <?php echo $calasis->nama ;?>
-                    </td>
+                       <td>
+                         <?php echo $krit->bobot; ?>
+                       </td>
 
-                    <td>
-                      <?php echo $calasis->kelas ;?>
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->jenis_kelamin ;?>
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->tanggal_lahir ;?>
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->alamat ;?>
-                    </td>
-
-
-
-
+                       <td>
+                          <a href="#" class="btn btn-warning">EDIT</a>
+                       </td>
 
                   </tr>
+                  <?php } ?>
 
-              <?php } ?>
               </tbody>
 
 
