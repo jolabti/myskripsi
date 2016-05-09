@@ -118,8 +118,8 @@ class Nilaicalonasistencontroller extends CI_Controller {
         );
         $this->calonsiswa->ubahCalonSiswa($valCalonSiswa, $nim);
 
-        //redirect('Nilaicalonasistencontroller');
-         ;
+         redirect('HimpunanController');
+
     }
 
 }

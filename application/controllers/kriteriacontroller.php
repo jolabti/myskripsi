@@ -1,6 +1,6 @@
 <?php
 
-class KriteriaController extends CI_Controller {
+class Kriteriacontroller extends CI_Controller {
 
     public function __construct() {
         parent::__construct();

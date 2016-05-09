@@ -20,14 +20,29 @@ class Normalisasicontroller extends CI_Controller {
     }
 
     public function index() {
-        $data['normalisasi'] = $this->Normalisasi->ambilNormalisasi();
-        $this->load->view('admin/NormalisasiView', $data);
+        $data['normalisasi'] = $this->normalisasi->m_joinNormalisasi();
+        $this->load->view('normalisasiview', $data);
+    }
+
+
+
+    public function kosongkanNormalisasi(){
+
+        $this->normalisasi->kosongkanNormalisasi_m();
+
+    }
+
+    public function testJoin(){
+
+        $data= $this->normalisasi->m_joinNormalisasi();
+        print_r($data);
     }
 
     public function prosesNormalisasi() {
 
+        $this->kosongkanNormalisasi();
         //jumlah calon siswa
-        $jumlahCalonSiswaDenganNilai = $this->NilaiCalonSiswa->ambilJumlahNilaiCalonSiswa();
+        $jumlahCalonSiswaDenganNilai = $this->nilaicalonasisten->ambilJumlahNilaiCalonSiswa();
 
         //data kriteria
         $kriteria = $this->kriteria->ambilKriteria();
@@ -84,24 +99,26 @@ class Normalisasicontroller extends CI_Controller {
             //nilai akhir
             foreach ($hasilSementaraVektor as $v) {
 
-                if ($this->normalisasi->ambilNormalisasiBerdasakanNim($v['nim'])== 0) {
+                if ($this->normalisasi->ambilNormalisasiBerdasakanNim($v['npm'])== 0) {
 
                 $val = array(
                     'id_normalisasi' => rand(),
                     'total_nilai' => $v['hasil'] / $jumlahHasilSeluruhVektor,
-                    'nim' => $v['nim'],
+                    'npm' => $v['npm'],
                     'nilai_c1'=>$v['c1'],
                     'nilai_c2'=>$v['c2'],
                     'nilai_c3'=>$v['c3'],
                     'nilai_c4'=>$v['c4'],
-                    'nilai_c5'=>$v['c5']
+                    'nilai_c5'=>$v['c5'],
+                    'nilai_c6'=>$v['c6']
                 );
 
                 $this->normalisasi->tambahNormalisasi($val);
             }
             }
         }
-        redirect('admin/NormalisasiController');
+        redirect('normalisasicontroller');
     }
+
 
 }

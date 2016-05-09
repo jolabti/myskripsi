@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title><?php echo $titleBrow;?> - METODE WP</title>
+  <title>
+    <?php echo $titleBrow;?> - METODE WP</title>
   <link href="<?php echo base_url();?>css/bootstrap.css" rel="stylesheet">
   <link href="<?php echo base_url();?>css/simple-sidebar.css" rel="stylesheet">
   <!-- <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -49,10 +50,10 @@
           <a href="<?php echo base_url();?>index.php/kriteriacontroller"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>KRITERIA</a>
         </li>
         <li>
-          <a href="<?php echo base_url();?>index.php/nilaicalonasistencontroller/"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>TABEL NILAI CALAS</a>
+          <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>TABEL NILAI CALAS</a>
         </li>
         <li>
-          <a href=" #"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL NORMALISASI</a>
+          <a href="<?php echo base_url();?>index.php/nilaicalonasistencontroller/"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL NORMALISASI</a>
         </li>
         <li>
           <a href="<?php echo base_url();?>index.php/HimpunanController"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>TABEL HIMPUNAN</a>
@@ -75,23 +76,30 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid ">
+            <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/prosesNormalisasi" class="btn btn-primary">PROSES NORMALISASI</a>
 
         <div class="row">
           <div class="col-sm-8">
+
             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
               <thead>
 
 
                 <tr>
 
-                  <th>ID KRITERIA</th>
-                  <th>NAMA KRITERIA</th>
-                  <th>BOBOT</th>
-                  <th>Action</th>
+                  <th>NIM</th>
+                  <th>Nama</th>
+                  <th>Criteria 1</th>
+                  <th>Criteria 2</th>
+                  <th>Criteria 3</th>
+                  <th>Criteria 4</th>
+                  <th>Criteria 5</th>
+                  <th>Criteria 6</th>
+                  <th>Total Nilai</th>
+                  <th>Ranking</th>
 
 
-
-                   <!-- <th>Start date</th>
+                  <!-- <th>Start date</th>
                   <th>Salary</th> -->
                 </tr>
               </thead>
@@ -99,41 +107,67 @@
 
                 <tr>
 
-                  <th>ID KRITERIA</th>
-                  <th>KRITERIA</th>
-                  <th>BOBOT</th>
-                  <th>Action</th>
-
+                  <th>N.P.M</th>
+                  <th>Nama</th>
+                  <th>Criteria 1</th>
+                  <th>Criteria 2</th>
+                  <th>Criteria 3</th>
+                  <th>Criteria 4</th>
+                  <th>Criteria 5</th>
+                  <th>Criteria 6</th>
+                  <th>Total Nilai</th>
+                  <th>Ranking</th>
 
                 </tr>
               </tfoot>
               <tbody>
 
-                  <?php foreach ($kriteria as $krit ) {
+                <?php
+                  $numbering=0;
+                 foreach ($normalisasi as $nor ) {
+                  $numbering++;
+                  ?>
 
-                    ?>
+                <tr>
 
-                  <tr>
+                  <td>
+                      <?php echo $nor->npm; ?>
+                  </td>
+                  <td>
+                      <?php echo $nor->nama; ?>
+                  </td>
+                  <td>
 
-                       <td>
-                         <?php echo $krit->id_kriteria; ?>
-                       </td>
+                      <?php echo $nor->nilai_c1; ?>
 
-                       <td>
-                         <?php echo strtoupper($krit->kriteria); ?>
-                       </td>
+                  </td>
+                  <td>
+                    <?php echo $nor->nilai_c2; ?>
 
-                       <td>
-                         <?php echo $krit->bobot; ?>
-                       </td>
+                  </td>
+                  <td>
+                    <?php echo $nor->nilai_c3; ?>
+                  </td>
+                  <td>
+                    <?php echo $nor->nilai_c4; ?>
+                  </td>
+                  <td>
+                    <?php echo $nor->nilai_c5; ?>
+                  </td>
+                  <td>
+                    <?php echo $nor->nilai_c6; ?>
+                  </td>
+                  <td>
+                    <?php echo $nor->total_nilai; ?>
+                  </td>
+                  <td>
+                    <?php echo $numbering; ?>
+                  </td>
 
-                       <td>
-                          <a href="#" class="btn btn-warning">EDIT</a>
-                       </td>
 
-                  </tr>
-                  <?php } ?>
+                </tr>
 
+                <?php } ?>
               </tbody>
 
 

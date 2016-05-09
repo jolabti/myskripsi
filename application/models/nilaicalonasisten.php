@@ -3,11 +3,11 @@
 class Nilaicalonasisten extends CI_Model{
 
   public function ambilCalonSiswaDanNilai() {
-         return $this->db->get('tb_calon_siswa_nilai')->result();
+         return $this->db->get('tb_nilai_calon_asisten')->result();
      }
 
      public function ambilNilaiCalonSiswaArray() {
-         return $this->db->get('tb_calon_siswa_nilai')->result_array();
+         return $this->db->get('tb_nilai_calon_asisten')->result_array();
      }
 
      public function ambilNilaiCalasSemua(){
@@ -19,17 +19,17 @@ class Nilaicalonasisten extends CI_Model{
      }
 
      public function ambilNilaiCalonSiswaBerdasakanNim($nim) {
-         $this->db->where('nim', $nim);
-         return $this->db->count_all_results('tb_calon_siswa_nilai');
+         $this->db->where('npm', $nim);
+         return $this->db->count_all_results('tb_nilai_calon_asisten');
      }
 
      public function ambilJumlahNilaiCalonSiswa() {
-         return $this->db->count_all_results('tb_nilai_calon_siswa');
+         return $this->db->count_all_results('tb_nilai_calon_asisten');
      }
 
      public function ambilNilaiMaxBerdasarkanKriteria($kriteria) {
          $this->db->select_max($kriteria);
-         return $this->db->get('tb_nilai_calon_siswa')->result_array();
+         return $this->db->get('tb_nilai_calon_asisten')->result_array();
      }
 
 
