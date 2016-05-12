@@ -49,9 +49,34 @@ class Nilaicalonasistencontroller extends CI_Controller {
               $c6a= 100.0;
 
         }
+
         else if($c6=="NONE"){
               $c6=0;
               $c6a= 0;
+        }
+
+        if ($c5>=2.85 && $c5<=3.1 ){
+            $c5=20;
+        }
+        else if($c5>3.1 && $c5<=3.4)
+        {
+            $c5=40;
+
+        }
+        else if($c5>3.4 && $c5<=3.65)
+        {
+            $c5=61;
+
+        }
+        else if($c5>3.65 && $c5<=4.00)
+        {
+
+            $c5=100;
+
+        }
+        else{
+            $c5=0;
+
         }
 
         foreach ($this->Himpunan->ambilHimpunan() as $h) {
@@ -120,6 +145,83 @@ class Nilaicalonasistencontroller extends CI_Controller {
 
          redirect('HimpunanController');
 
+    }
+    function import_csv_calas() {
+
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'csv';
+        $config['max_size'] = '1000';
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload()) {
+
+            redirect('index/calas?status=csvgagal');
+
+        } else {
+
+            $file_data = $this->upload->data();
+            $file_path =  './uploads/'.$file_data['file_name'];
+
+            if ($this->csvimport->get_array($file_path)) {
+                $csv_array = $this->csvimport->get_array($file_path);
+                foreach ($csv_array as $row) {
+                    $insert_data =
+                     array('kode_peserta'=>$row['kode_peserta'],
+                    			 'npm'=>$row['npm'],
+                        	 'nama'=>$row['nama'],
+                        	 'kelas'=>$row['kelas'],
+                        	 'semester'=>$row['semester'],
+        										'jenis_kelamin'=>$row['jenis_kelamin'],
+        										'agama'=>$row['agama'],
+        										'no_hp'=>$row['no_hp'],
+        										'email'=>$row['email'],
+        										'alamat'=>$row['alamat']);
+
+
+                $this->model_admin->m_insert_csvcalas($insert_data);
+                }
+
+                foreach ($csv_array as $row1) {
+                    $insert_data = array('npm'=>$row1['npm'],
+                        				'c1'=>$row1['ipk'],
+                        				'c2'=>$row1['prestasi'],
+                        				'c3'=>$row1['nilai_teori'],
+                        				'c4'=>$row1['nilai_praktek'],
+                        				'c5'=>$row1['nilai_presentasi'],
+                        				'c6'=>$row1['nilai_wawancara']);
+
+
+                $this->model_admin->m_insert_csvcalas1($insert_data);
+                }
+
+                $val = array(
+                    'id_nilai' => rand(),
+                    'nilai_asli_c1' => $this->input->post('c1'),
+                    'nilai_asli_c2' => $this->input->post('c2'),
+                    'nilai_asli_c3' => $this->input->post('c3'),
+                    'nilai_asli_c4' => $this->input->post('c4'),
+                    'nilai_asli_c5' => $this->input->post('c5'),
+                    'nilai_asli_c6' =>  $c6a,
+                    'c1' => $c1,
+                    'c2' => $c2,
+                    'c3' => $c3,
+                    'c4' => $c4,
+                    'c5' => $c5,
+                    'c6' => $c6,
+                    'npm' => $nim
+                );
+
+                redirect('index/calas?status=ok');
+
+            } else
+
+            	echo '<script language="javascript">';
+				echo 'alert("Upload gagal")';
+				echo '</script>';
+
+                redirect('index/calas','refresh');
+        }
     }
 
 }

@@ -32,6 +32,16 @@ class Nilaicalonasisten extends CI_Model{
          return $this->db->get('tb_nilai_calon_asisten')->result_array();
      }
 
+     //model insert csv calas
+	   public function m_insert_csvcalasdata($data) {
+        $this->db->insert('tb_calon_asisten', $data);
+    }
+
+    //model insert csv nilai calas
+	   public function m_insert_csvcalasnilai($data) {
+        $this->db->insert('tb_nilai_calon_asisten', $data);
+    }
+
 
 }
 

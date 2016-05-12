@@ -52,7 +52,7 @@
           <a href="<?php echo base_url();?>index.php/nilaicalonasistencontroller/"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>TABEL NILAI CALAS</a>
         </li>
         <li>
-          <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL NORMALISASI</a>
+          <a href="<?php echo base_url();?>index.php/normalisasicontroller"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL NORMALISASI</a>
         </li>
         <li>
           <a href="<?php echo base_url();?>index.php/HimpunanController"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>TABEL HIMPUNAN</a>
@@ -90,27 +90,27 @@
                   <input type="text" class="form-control" id="pwd" name="npm">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">nilai_asli_c1</label>
+                  <label for="pwd">Nilai Teori C1</label>
                   <input type="text" class="form-control" id="pwd"  name="c1">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">nilai_asli_c2</label>
+                  <label for="pwd">Nilai Praktek C2</label>
                   <input type="text" class="form-control" id="pwd" name="c2">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">nilai_asli_c3</label>
+                  <label for="pwd">Nilai Presentasi C3</label>
                   <input type="text" class="form-control" id="pwd" name="c3">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">nilai_asli_c4</label>
+                  <label for="pwd">Nilai Wawancara C4</label>
                   <input type="text" class="form-control" id="pwd" name="c4">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">nilai_asli_c5</label>
+                  <label for="pwd">IPK C5</label>
                   <input type="text" class="form-control" id="pwd" name="c5">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">PRESTASI</label>
+                  <label for="pwd">PRESTASI C6</label>
                   <!-- <input type="text" class="form-control" id="pwd" name="c6"> -->
 
                   <select class="form-control" name="c6">
@@ -127,10 +127,18 @@
 
                 <button type="submit" class="btn btn-success">Submit</button>
               </form>
+
             </div>
           </div>
           <div class="modal-footer">
+            <form class="form-group" action="index.html" method="post">
+                <span>UPLOAD CSV</span><input type="file" name="csvfile" /> <input type="submit" class="btn btn-primary" value="UPLOAD">
+            </form>
+
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+
+
           </div>
         </div>
 

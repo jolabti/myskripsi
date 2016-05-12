@@ -22,7 +22,7 @@ class Calonsiswacontroller extends CI_Controller {
 
         $data['calon_asis'] = $this->calonsiswa->ambilCalonAsisten();
         $data['titleBrow'] = "DATA CALAS-SPKTI";
-        $this->load->view('tbcalonsiswaview', $data);
+        $this->load->view('tbcalonasistenview', $data);
     }
 
     public function tambahCalonSiswa() {
