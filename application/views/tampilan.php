@@ -66,6 +66,16 @@
           <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Tambah Data Calas</button>
 
         </li>
+
+        <li class="fa-stack fa-lg pull-left">
+
+          <form method="post" action="<?php echo base_url();?>index.php/nilaicalonasistencontroller/import_csv_calas" enctype="multipart/form-data">
+                   <input type="file" name="userfile" ><br><br>
+                   <input type="submit" name="submit" value="UPLOAD" class="btn btn-primary">
+         </form>
+
+
+        </li>
       </ul>
       <!-- Modal -->
 
@@ -131,9 +141,6 @@
             </div>
           </div>
           <div class="modal-footer">
-            <form class="form-group" action="index.html" method="post">
-                <span>UPLOAD CSV</span><input type="file" name="csvfile" /> <input type="submit" class="btn btn-primary" value="UPLOAD">
-            </form>
 
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
