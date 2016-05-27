@@ -41,7 +41,7 @@
     <div class="card">
 
       <!--Card image-->
-      <img class="img-rounded" src="<?php echo base_url();?>media/ugfuture.jpg" alt="Card image cap" width="100%" height="350px">
+      <img class="img-circle" src="<?php echo base_url();?>media/ugfuture.jpg" alt="Card image cap" width="100%" height="350px">
       <!--/.Card image-->
 
       <!--Card content-->
