@@ -22,7 +22,7 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
         <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
       </button>
-      <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> SPK-TI</a>
+      <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> SPK-TI NORMALISASI</a>
     </div>
     <!-- navbar-header-->
 
@@ -86,8 +86,8 @@
 
 
                 <tr>
-
-                  <th>NIM</th>
+                  <th>No.</th>
+                  <th>N.P.M</th>
                   <th>Nama</th>
                   <th>Criteria 1</th>
                   <th>Criteria 2</th>
@@ -107,6 +107,7 @@
 
                 <tr>
 
+                  <th>No.</th>
                   <th>N.P.M</th>
                   <th>Nama</th>
                   <th>Criteria 1</th>
@@ -130,6 +131,9 @@
 
                 <tr>
 
+                  <td>
+                      <?php echo $numbering; ?>
+                  </td>
                   <td>
                       <?php echo $nor->npm; ?>
                   </td>

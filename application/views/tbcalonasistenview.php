@@ -21,7 +21,7 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
         <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
       </button>
-      <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> SPK-TI</a>
+      <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> SPK-TI Data Calas</a>
     </div>
     <!-- navbar-header-->
 
@@ -61,9 +61,19 @@
           <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>INFO</a>
         </li>
 
-        <li class="fa-stack fa-lg pull-left">
+        <!-- <li class="fa-stack fa-lg pull-left">
 
           <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Tambah Data Calas</button>
+
+        </li> -->
+
+        <li class="fa-stack fa-lg pull-left">
+
+          <form method="post" action="<?php echo base_url();?>index.php/nilaicalonasistencontroller/import_csv_calas" enctype="multipart/form-data">
+                   <input type="file" name="userfile" ><br><br>
+                   <input type="submit" name="submit" value="UPLOAD" class="btn btn-primary">
+         </form>
+
 
         </li>
       </ul>
