@@ -77,6 +77,8 @@
     <div id="page-content-wrapper">
       <div class="container-fluid ">
             <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/prosesNormalisasi" class="btn btn-primary">PROSES NORMALISASI</a>
+            <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/kosongkanNormalisasi" class="btn btn-danger">RESET</a>
+
 
         <div class="row">
           <div class="col-sm-8">

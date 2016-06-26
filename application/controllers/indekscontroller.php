@@ -33,12 +33,12 @@ class Indekscontroller extends CI_Controller {
 					if($this->form_validation->run() == FALSE)
 					{
 						//Field validation failed.  User redirected to login page
-						$this->load->view('login_view');
+						$this->load->view('login_v');
 					}
 					else
 					{
 						//Go to private area
-						redirect('home', 'refresh');
+						redirect('Calonsiswacontroller', 'refresh');
 					}
 
 	}
@@ -46,7 +46,7 @@ class Indekscontroller extends CI_Controller {
 	function check_database($password)
   {
    //Field validation succeeded.  Validate against database
-	 $this->load->model('user');	
+	 $this->load->model('user');
    $username = $this->input->post('username');
 
    //query the database

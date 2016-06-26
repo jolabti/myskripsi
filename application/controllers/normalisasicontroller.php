@@ -29,7 +29,7 @@ class Normalisasicontroller extends CI_Controller {
     public function kosongkanNormalisasi(){
 
         $this->normalisasi->kosongkanNormalisasi_m();
-
+        redirect('normalisasicontroller');
     }
 
     public function testJoin(){
@@ -40,7 +40,7 @@ class Normalisasicontroller extends CI_Controller {
 
     public function prosesNormalisasi() {
 
-        $this->kosongkanNormalisasi();
+    //    $this->kosongkanNormalisasi();
         //jumlah calon siswa
         $jumlahCalonSiswaDenganNilai = $this->nilaicalonasisten->ambilJumlahNilaiCalonSiswa();
 
@@ -115,7 +115,7 @@ class Normalisasicontroller extends CI_Controller {
 
                 $this->normalisasi->tambahNormalisasi($val);
             }
-            }
+          }
         }
         redirect('normalisasicontroller');
     }

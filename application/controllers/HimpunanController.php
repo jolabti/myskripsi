@@ -14,6 +14,13 @@ class HimpunanController extends CI_Controller{
 
   }
 
+  public function himpunanJson(){
+          $this->load->model('Himpunan');
+       
+          $data= $this->Himpunan->ambilHimpunanJson();
+
+          print json_encode($data);
+  }
 
 
 
