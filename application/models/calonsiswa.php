@@ -12,6 +12,8 @@
  */
 class Calonsiswa extends CI_Model {
 
+
+
     public function tambahCalonSiswa($calonSiswa) {
         $this->db->insert('tb_calon_siswa', $calonSiswa);
     }
@@ -28,6 +30,27 @@ class Calonsiswa extends CI_Model {
     public function ubahCalonSiswa($calonSiswa, $nim) {
         $this->db->where('npm', $nim);
         $this->db->update('tb_calon_asisten', $calonSiswa);
+    }
+
+    function validasi() {
+  		$this->load->model('user');
+
+
+
+  		 // Berfungsi untuk memanggil fungsi ambil_data pada class login_model
+  		  	$cek= $this->user->ambil_login();
+
+  					  if ($cek==TRUE){
+
+  							$this->calonasistencontroller();
+  						}
+
+  						else{
+  							$this->index();
+
+  						}
+
+
     }
 
 }

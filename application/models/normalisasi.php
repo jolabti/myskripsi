@@ -22,6 +22,18 @@ class Normalisasi extends CI_Model {
 
     }
 
+    public function kosongkanCalonAsisten_m(){
+
+        $this->db->empty_table('tb_nilai_calon_asisten');
+
+    }
+    public function kosongkanDataAsisten_m(){
+
+        $this->db->empty_table('tb_calon_asisten');
+
+    }
+
+
     public function m_joinNormalisasi(){
 
       $this->db->select('*');

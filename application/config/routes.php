@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "indekscontroller";
+$route['default_controller'] = "Indekscontroller";
 $route['404_override'] = '';
 
 

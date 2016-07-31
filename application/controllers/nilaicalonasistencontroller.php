@@ -21,9 +21,19 @@ class Nilaicalonasistencontroller extends CI_Controller
 
     public function index()
     {
+        if($this->session->userdata('logged_in')){
+
         $data['nilai_calon_asisten'] = $this->nilaicalonasisten->ambilNilaiCalasSemua();
         $data['titleBrow'] = 'NILAI CALAS-SPKTI';
         $this->load->view('tabelnilaicalasview', $data);
+
+      }
+
+      else{
+
+          redirect('indekscontroller');
+
+      }
     }
 
     public function tambahNilaiCalonAsisten()
@@ -152,7 +162,7 @@ class Nilaicalonasistencontroller extends CI_Controller
                              'nama' => $row['nama'],
                              'kelas' => $row['kelas'],
                              'jenis_kelamin' => $row['jenis_kelamin'],
-                             'tanggal_lahir' => $row['tanggal_lahir'],
+                            // 'tanggal_lahir' => $row['tanggal_lahir'],
                              'alamat' => $row['alamat'],
 
                          );

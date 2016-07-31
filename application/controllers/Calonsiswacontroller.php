@@ -12,6 +12,7 @@
  */
 class Calonsiswacontroller extends CI_Controller {
 
+
     public function __construct() {
         parent::__construct();
         $this->load->model('calonsiswa');
@@ -20,9 +21,18 @@ class Calonsiswacontroller extends CI_Controller {
 
     public function index() {
 
-        $data['calon_asis'] = $this->calonsiswa->ambilCalonAsisten();
-        $data['titleBrow'] = "DATA CALAS-SPKTI";
-        $this->load->view('tbcalonasistenview', $data);
+        if($this->session->userdata('logged_in')){
+
+          $data['calon_asis'] = $this->calonsiswa->ambilCalonAsisten();
+          $data['titleBrow'] = "DATA CALAS-SPKTI";
+          $this->load->view('tbcalonasistenview', $data);
+
+        }
+
+        else{
+
+          redirect('indekscontroller');
+        }
     }
 
     public function tambahCalonSiswa() {

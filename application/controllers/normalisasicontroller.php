@@ -20,8 +20,19 @@ class Normalisasicontroller extends CI_Controller {
     }
 
     public function index() {
+
+        if($this->session->userdata('logged_in')){
+
         $data['normalisasi'] = $this->normalisasi->m_joinNormalisasi();
         $this->load->view('normalisasiview', $data);
+        }
+
+        else{
+
+          redirect('indekscontroller');
+        }
+
+
     }
 
 
@@ -29,6 +40,10 @@ class Normalisasicontroller extends CI_Controller {
     public function kosongkanNormalisasi(){
 
         $this->normalisasi->kosongkanNormalisasi_m();
+        $this->normalisasi->kosongkanCalonAsisten_m();
+        $this->normalisasi->kosongkanDataAsisten_m();
+
+
         redirect('normalisasicontroller');
     }
 

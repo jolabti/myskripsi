@@ -51,9 +51,9 @@
         <!--Text-->
 
         <div class="md-form">
-          <form class="form-control-sm " action="<?php echo base_url();?>index.php/indekscontroller/loginc" method="post">
-            <input placeholder="Username" type="text" id="form5" class="form-control">
-            <input placeholder="Password" type="password" id="form5" class="form-control">
+          <form class="form-control-sm " action="<?php echo base_url();?>index.php/indekscontroller/validasi" method="post">
+            <input placeholder="Username" type="text" id="form5" class="form-control" name="username">
+            <input placeholder="Password" type="password" id="form5" class="form-control" name="password">
           <input type="submit" name="name" value="LOGIN" class="form-control btn btn-sm btn-info-outline">
           </form>
 

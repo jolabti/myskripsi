@@ -1,26 +1,32 @@
 <?php
 Class User extends CI_Model
 {
- function login($username, $password)
- {
-   $this->db->select('id, username, password');
-   $this->db->from('user');
-   $this->db->where('username', $username);
 
-   $this->db->where('password',  $password );
-   $this->db->limit(1);
 
-   $query = $this->db->get();
+ function ambil_login(){
+    $username = $this->security->xss_clean($this->input->post('username'));
+    $password = $this->security->xss_clean($this->input->post('password'));
 
-   if($query -> num_rows() == 1)
-   {
-     return $query->result();
-   }
-   else
-   {
-     return false;
-   }
- }
+    $this->db->where('username', $username);
+    $this->db->where('password', $password);
+    $query = $this->db->get('user');
+    if($query->num_rows == 1)
+    {
+        // If there is a user, then create session data
+        $row = $query->row();
+        $data = array(
+                'userid' => $row->id_user,
+                'uname' => $row->username,
+                'validated' => true
+                );
+        $this->session->set_userdata('logged_in',$data);
+        return true;
+    }
+    // If the previous process did not validate
+    // then return false.
+    return false;
+  }
+
 }
 
 ?>
