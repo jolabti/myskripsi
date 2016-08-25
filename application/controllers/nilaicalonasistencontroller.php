@@ -60,13 +60,13 @@ class Nilaicalonasistencontroller extends CI_Controller
             $c6a = 0;
         }
 
-        if ($c5 >= 2.85 && $c5 <= 3.1) {
+        if ($c5 >= 2.71 && $c5 <= 3.11) {
             $c5 = 20;
-        } elseif ($c5 > 3.1 && $c5 <= 3.4) {
+        } elseif ($c5 > 3.11 && $c5 <= 3.41) {
             $c5 = 40;
-        } elseif ($c5 > 3.4 && $c5 <= 3.65) {
+        } elseif ($c5 > 3.41 && $c5 <= 3.71) {
             $c5 = 61;
-        } elseif ($c5 > 3.65 && $c5 <= 4.00) {
+        } elseif ($c5 > 3.71 && $c5 <= 4.00) {
             $c5 = 100;
         } else {
             $c5 = 0;
@@ -179,11 +179,11 @@ class Nilaicalonasistencontroller extends CI_Controller
                   $c4=$row1['nilai_asli_c4'];
                     //pengecekan prestasi
                   if ($row1['nilai_asli_c6'] == 'LOKAL') {
-                      $c6 = 20;
-                      $c6a = 20.0;
+                      $c6 = 21;
+                      $c6a = 21.0;
                   } else if ($row1['nilai_asli_c6'] == 'NASIONAL') {
-                      $c6 = 60;
-                      $c6a = 60.0;
+                      $c6 = 61;
+                      $c6a = 61.0;
                   } else if ($row1['nilai_asli_c6'] == 'INTERNASIONAL') {
                       $c6 = 100;
                       $c6a = 100.0;
