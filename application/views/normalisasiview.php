@@ -80,7 +80,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid ">
-            <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/prosesNormalisasi" class="btn btn-primary">PROSES NORMALISASI</a>
+            <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/prosesNormalisasi" class="btn btn-primary">PROSES METODE</a>
             <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/kosongkanNormalisasi" class="btn btn-success">RESET</a>
               <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/indekscontroller/logout">LOGOUT</a>
 

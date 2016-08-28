@@ -63,14 +63,14 @@
 
 
 
-        <div class="card">
+        <!-- <div class="card">
 
           <div class="card-block">
             <h4 class="card-title">Keterangan</h4>
             <p class="card-text">Jika terdapat kesalahan program- Klik button di bawah.</p>
             <a href="#" class="btn btn-danger">Report Bug</a>
           </div>
-        </div>
+        </div> -->
       </div>
       <!--/.Card content-->
 

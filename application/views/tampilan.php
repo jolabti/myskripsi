@@ -155,7 +155,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid ">
-
+        <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/indekscontroller/logout">LOGOUT</a>
         <div class="row">
           <div class="col-xl-12">
             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -186,10 +186,10 @@
                       <?php echo $himp->id_himpunan; ?>
                     </td>
                     <td>
-                      <?php echo $himp->batas_atas; ?>
+                      <?php echo $himp->batas_bawah; ?>
                     </td>
                     <td>
-                      <?php echo $himp->batas_bawah; ?>
+                      <?php echo $himp->batas_atas; ?>
                     </td>
                     <td>
                       <?php echo $himp->nilai; ?>

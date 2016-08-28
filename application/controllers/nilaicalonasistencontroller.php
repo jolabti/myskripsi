@@ -1,13 +1,6 @@
 <?php
 
-/**
- * Author Rizki Mufrizal <mufrizalrizki@gmail.com>
- * Since Apr 21, 2016
- * Time 10:16:56 PM
- * Encoding UTF-8
- * Project Metode-SAW
- * Package Expression package is undefined on line 14, column 14 in Templates/Scripting/PHPClass.php.
- */
+
 class Nilaicalonasistencontroller extends CI_Controller
 {
     public function __construct()
@@ -178,52 +171,52 @@ class Nilaicalonasistencontroller extends CI_Controller
                   $c3=$row1['nilai_asli_c3'];
                   $c4=$row1['nilai_asli_c4'];
                     //pengecekan prestasi
-                  if ($row1['nilai_asli_c6'] == 'LOKAL') {
-                      $c6 = 21;
-                      $c6a = 21.0;
-                  } else if ($row1['nilai_asli_c6'] == 'NASIONAL') {
-                      $c6 = 61;
-                      $c6a = 61.0;
-                  } else if ($row1['nilai_asli_c6'] == 'INTERNASIONAL') {
-                      $c6 = 100;
-                      $c6a = 100.0;
-                  } else if ($row1['nilai_asli_c6'] == 'NONE') {
-                      $c6 = 0;
-                      $c6a = 0;
-                  }
 
-                  //pengecekan IPK
-                  if ($row1['nilai_asli_c5'] >= 2.85 && $row1['nilai_asli_c5'] <= 3.1) {
-                      $c5 = 20;
-                    } else if ($row1['nilai_asli_c5'] > 3.1 && $row1['nilai_asli_c5'] <= 3.4) {
-                      $c5 = 40;
-                  } else if ($row1['nilai_asli_c5'] > 3.4 && $row1['nilai_asli_c5'] <= 3.65) {
-                      $c5 = 61;
-                  } else if ($row1['nilai_asli_c5'] > 3.65 && $row1['nilai_asli_c5'] <= 4.00) {
-                      $c5 = 100;
-                  } else {
-                      $c5 = 0;
-                  }
 
+                    if ($row1['nilai_asli_c6'] == 'LOKAL') {
+                                $c6 = 21;
+                                $c6a = 21.0;
+                            } else if ($row1['nilai_asli_c6'] == 'NASIONAL') {
+                                $c6 = 61;
+                                $c6a = 61.0;
+                            } else if ($row1['nilai_asli_c6'] == 'INTERNASIONAL') {
+                                $c6 = 100;
+                                $c6a = 100.0;
+                            } else if ($row1['nilai_asli_c6'] == 'NONE') {
+                                $c6 = 0;
+                                $c6a = 0;
+                            }
+                            //pengecekan IPK
+                            if ($row1['nilai_asli_c5'] >= 2.85 && $row1['nilai_asli_c5'] <= 3.1) {
+                                $c5 = 20;
+                              } else if ($row1['nilai_asli_c5'] > 3.1 && $row1['nilai_asli_c5'] <= 3.4) {
+                                $c5 = 40;
+                            } else if ($row1['nilai_asli_c5'] > 3.4 && $row1['nilai_asli_c5'] <= 3.65) {
+                                $c5 = 61;
+                            } else if ($row1['nilai_asli_c5'] > 3.65 && $row1['nilai_asli_c5'] <= 4.00) {
+                                $c5 = 100;
+                            } else {
+                                $c5 = 0;
+                            }
 
 
                     foreach ($this->Himpunan->ambilHimpunan() as $h) {
-                        if ($c1 >= $h->batas_atas and $c1 <= $h->batas_bawah) {
+                        if ($c1 >= $h->batas_bawah and $c1 <= $h->batas_atas) {
                             $c1 = $h->nilai;
                         }
-                        if ($c2 >= $h->batas_atas and $c2 <= $h->batas_bawah) {
+                        if ($c2 >= $h->batas_bawah and $c2 <= $h->batas_atas) {
                             $c2 = $h->nilai;
                         }
-                        if ($c3 >= $h->batas_atas and $c3 <= $h->batas_bawah) {
+                        if ($c3 >= $h->batas_bawah and $c3 <= $h->batas_atas) {
                             $c3 = $h->nilai;
                         }
-                        if ($c4 >= $h->batas_atas and $c4 <= $h->batas_bawah) {
+                        if ($c4 >= $h->batas_bawah and $c4 <= $h->batas_atas) {
                             $c4 = $h->nilai;
                         }
-                        if ($c5 >= $h->batas_atas and $c5 <= $h->batas_bawah) {
+                        if ($c5 >= $h->batas_bawah and $c5 <= $h->batas_atas) {
                             $c5 = $h->nilai;
                         }
-                        if ($c6 >= $h->batas_atas and $c6 <= $h->batas_bawah) {
+                        if ($c6 >= $h->batas_bawah and $c6 <= $h->batas_atas) {
                             $c6 = $h->nilai;
                         }
                     }
@@ -252,4 +245,6 @@ class Nilaicalonasistencontroller extends CI_Controller
             }
         }
     }
+
+
 }
