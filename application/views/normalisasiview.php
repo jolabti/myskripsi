@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>
-    <?php echo $titleBrow;?> - METODE WP</title>
+     HASIL - SPKTI</title>
   <link href="<?php echo base_url();?>css/bootstrap.css" rel="stylesheet">
   <link href="<?php echo base_url();?>css/simple-sidebar.css" rel="stylesheet">
   <!-- <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -52,22 +52,27 @@
           <a href="<?php echo base_url();?>index.php/nilaicalonasistencontroller"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>TABEL NILAI CALAS</a>
         </li>
         <li>
-          <a href="<?php echo base_url();?>index.php/normalisasicontroller"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL NORMALISASI</a>
+          <a href="<?php echo base_url();?>index.php/normalisasicontroller"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>TABEL HASIL</a>
         </li>
         <li>
           <a href="<?php echo base_url();?>index.php/HimpunanController"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>TABEL HIMPUNAN</a>
         </li>
         <li>
-          <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>INFO</a>
+          <a href="<?php echo base_url(); ?>index.php/indekscontroller/infoapps"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>INFO</a>
         </li>
 
         <li class="fa-stack fa-lg pull-left">
 
           <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Tambah Data Calas</button>
 
+
         </li>
+
+
+
       </ul>
       <!-- Modal -->
+
 
     </div>
 
@@ -76,8 +81,8 @@
     <div id="page-content-wrapper">
       <div class="container-fluid ">
             <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/prosesNormalisasi" class="btn btn-primary">PROSES NORMALISASI</a>
-            <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/kosongkanNormalisasi" class="btn btn-danger">RESET</a>
-
+            <a href="<?php echo base_url(); ?>index.php/normalisasicontroller/kosongkanNormalisasi" class="btn btn-success">RESET</a>
+              <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/indekscontroller/logout">LOGOUT</a>
 
         <div class="row">
           <div class="col-sm-8">

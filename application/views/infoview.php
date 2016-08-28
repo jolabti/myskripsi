@@ -8,8 +8,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>
-    DATA CALON ASISTEN - SPKTI
-    </title>
+
+      INFO -SPKTI
+   </title>
   <link href="<?php echo base_url();?>css/bootstrap.css" rel="stylesheet">
   <link href="<?php echo base_url();?>css/simple-sidebar.css" rel="stylesheet">
   <!-- <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -71,12 +72,6 @@
 
         <li class="fa-stack fa-lg pull-left">
 
-          <form method="post" action="<?php echo base_url();?>index.php/nilaicalonasistencontroller/import_csv_calas" enctype="multipart/form-data">
-            <input type="file" name="userfile">
-            <br>
-            <br>
-            <input type="submit" name="submit" value="UPLOAD" class="btn btn-primary">
-          </form>
 
 
         </li>
@@ -89,91 +84,50 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid ">
-          <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/indekscontroller/logout">LOGOUT</a>
+        <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/indekscontroller/logout">LOGOUT</a>
         <div class="row">
           <div class="col-sm-8">
-            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card card-block">
+                  <h3 class="card-title">Langkah 1.</h3>
+                  <p class="card-text">Pengguna harus melakukan aktifitas authentikasi untuk menjalankan aktifitas pada Sistem Penunjang Keputusan ini.</p>
 
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card card-block">
+                  <h3 class="card-title">Langkah 2.</h3>
+                  <p class="card-text">Upload File berkas yang telah ditetapkan untuk aplikasi ini.</p>
 
-                <tr>
-
-                  <th>N.P.M</th>
-                  <th>Nama Calas</th>
-                  <th> Kelas</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Alamat</th>
-
-
-                  <!-- <th>Start date</th>
-                  <th>Salary</th> -->
-                </tr>
-              </thead>
-              <tfoot>
-
-                <tr>
-
-                  <th>N.P.M</th>
-                  <th>Nama Calas</th>
-                  <th> Kelas</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Alamat</th>
-
-                </tr>
-              </tfoot>
-              <tbody>
-
-
-                <?php foreach ( $calon_asis as $calasis) {
-
-                 ?>
-                  <tr>
-                    <td>
-
-                      <?php echo $calasis->npm ;?>
-
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->nama ;?>
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->kelas ;?>
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->jenis_kelamin ;?>
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->tanggal_lahir ;?>
-                    </td>
-
-                    <td>
-                      <?php echo $calasis->alamat ;?>
-                    </td>
-
-
-
-
-
-                  </tr>
-
-                  <?php } ?>
-              </tbody>
-
-
-            </table>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
 
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card card-block">
+                  <h3 class="card-title">Langkah 3.</h3>
+                  <p class="card-text">Tekan Tombol Proses Metode .</p>
 
-      </div>
-    </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card card-block">
+                  <h3 class="card-title">Langkah 4.</h3>
+                  <p class="card-text">Hasil aplikasi terdapat pada navigasi Tabel Hasil dalam bentuk tabel dengan peringkat.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
     <!-- /#page-content-wrapper -->
   </div>
   <!-- /#wrapper -->
